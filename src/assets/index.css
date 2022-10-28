@@ -15,19 +15,40 @@
   color: #ffffff;
 }
 
+/* sections */
+.questions-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.container-left {
+  width: 45%;
+  background-image: url(./images/img-satrix-questionnaire-hero.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #edeeee;
+}
+
+.container-right {
+  display: flex;
+  flex: 1;
+  flex-basis: auto;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  padding-top: 100px;
+}
+
+/* question styling */
 .question-display {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 3.75em;
   flex-direction: column;
-}
-
-.container-right {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: space-between;
 }
 
 .question-header {
@@ -129,7 +150,11 @@
   width: 10%;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+  .container-right {
+    padding-top: 60px;
+  }
+
   .question-display {
     padding: 0em 1.875em;
   }
