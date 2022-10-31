@@ -11,36 +11,63 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/assets/index.css"
+    <link rel="stylesheet" href="./src/assets/index.css" />
+    <script defer src="./src/data/questions.data.js" type="module"></script>
+    <script
+      defer
+      src="./src/functions/questionnaire.func.js"
+      type="module"
+    ></script>
   </head>
   <body>
-    <div name="launcher"></div>
-    <div class="questions-container">
+    <div class="start-container master-container" data-state="disabled">
+      <div class="intro-header">
+        <div class="header">
+          <h1>Take</h1>
+          <h2>our test</h2>
+        </div>
+        <div class="intro">
+          <p class="intro-text">
+            How closely have you been paying attention? <br />Take our quiz and
+            get your score!
+          </p>
+          <button>Start the quiz</button>
+        </div>
+      </div>
+    </div>
+    <div class="content-container master-container" data-state="active">
       <div class="container-left"></div>
       <div class="container-right">
         <div class="question-display">
           <div class="question-header">
-            <span class="question-title">Question</span>
-            <span class="question">Loading question...</span>
+            <span
+              class="question-title"
+              id="question-number"
+              data-question-index="1"
+              >Question</span
+            >
+            <span class="question" data-question="Question"
+              >Loading question...</span
+            >
           </div>
           <div class="answer-list">
             <div class="answer-item">
               <div>A</div>
-              <div>Answer A</div>
+              <div id="answer-a">Answer A</div>
             </div>
             <div class="answer-item">
               <div>B</div>
-              <div>Answer B</div>
+              <div id="answer-b">Answer B</div>
             </div>
             <div class="answer-item">
               <div>C</div>
-              <div>Answer C</div>
+              <div id="answer-c">Answer C</div>
             </div>
           </div>
         </div>
         <div class="progress-bar">
-          <div class="progress-info">10%</div>
-          <div class="progress-bar-indicator"></div>
+          <div class="progress-info" id="progress-info">10%</div>
+          <div class="progress-bar-indicator" id="progress-bar"></div>
           <div class="progress-bar-base"></div>
         </div>
       </div>

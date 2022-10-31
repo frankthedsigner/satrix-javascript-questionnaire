@@ -16,11 +16,32 @@
 }
 
 /* sections */
-.questions-container {
+.master-container[data-state='active'] {
+  visibility: visible;
+}
+
+.master-container[data-state='disabled'] {
+  visibility: hidden;
+}
+
+.master-container {
   display: flex;
+  width: 100%;
+}
+
+.start-container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-image: url(./images/img-satrix-questionnaire-hero.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.content-container {
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 100%;
 }
 
 .container-left {
@@ -40,6 +61,72 @@
   height: 100vh;
   justify-content: space-between;
   padding-top: 100px;
+}
+
+/* start container styling */
+h1 {
+  font-size: 12.06em;
+  line-height: 1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: end;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 5em;
+  line-height: 1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: end;
+  color: var(--accent);
+  margin-top: -0.3em;
+  margin-right: 0.1em;
+}
+
+.intro-header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: end;
+  bottom: 27vh;
+  left: 25vw;
+  gap: 2.46em;
+}
+
+.header {
+  position: absolute;
+  right: -10px;
+  margin-bottom: 100px;
+}
+
+.intro {
+  display: flex;
+  margin-right: -242px;
+  gap: 25px;
+}
+
+.intro-text {
+  font-size: 1.25em;
+  text-align: end;
+  color: #ffffff;
+}
+
+button {
+  max-height: 54px;
+  padding: 16px 30px;
+  background-color: #ffffff;
+  color: var(--accent);
+  border: none;
+  font-size: 1.13em;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--accent);
+  color: #ffffff;
 }
 
 /* question styling */
@@ -69,8 +156,9 @@
 .question {
   text-align: center;
   font-size: 1.25em;
-  line-height: 1em;
+  line-height: 1.5em;
   font-weight: 400;
+  max-width: 510px;
 }
 
 .answer-list {
